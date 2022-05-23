@@ -1,0 +1,83 @@
+<? include "useragent.html" ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+<? include "keywords.html" ?>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="밀양풀빌라 소나무펜션">
+<meta property="og:description" content="밀양풀빌라 소나무펜션, 밀양 소나무풀빌라, 밀양 소나무펜션, 밀양 펜션, 밀양 풀빌라, 개별수영장, 야외공용수영장, 황토찜질방">
+<meta property="og:image" content="http://gonylab8.speedgabia.com/pinetree/m/main/1.jpg">
+<meta property="og:url" content="http://pinetreeps.kr/">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/image.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+	
+<!-- analytics -->
+<? include "analytics.html" ?>
+<!-- //analytics -->
+	
+</head>
+
+<body id="index" class="hd vid">
+	<!-- header -->
+	<? include "header.html" ?>
+	<!-- //header -->	
+	
+	<!-- popup -->
+	<style type="text/css">
+		#popup01 {position:absolute;top:100px;right:450px;width:350px;z-index:550;}
+		#popup02 {position:absolute;top:100px;right:50px;width:350px;z-index:550;}
+		.pops a {display:block;}.close {position:absolute;top:0;right:40px;z-index:560;}
+		#popup02 a.close {right: 0!important;;}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){$(".pops .close").click(function(){$(this).parent(".pops").remove(); return false;});});
+	</script>
+
+	<!-- <div id="popup01" class="pops">
+		<a href="#" onclick="return false;" target="_blank" class="pop_img"><img src="pop/pop_01.png" alt="" width="350" /></a>
+		<a href="#" class="close"><img src="pop/close.png" alt="닫기" width="55" height="55"></a>
+	</div>
+	<div id="popup02" class="pops">
+		<a href="reserve.html" target="_blank" class="pop_img"><img src="pop/pop_02.jpg" alt="" width="350" /></a>
+		<a href="#" class="close"><img src="http://gonylab3.speedgabia.com/soom/pop/close.png" alt="닫기" width="50" height="35"></a>
+	</div> -->
+
+	<section>
+		<div class="section video">
+			<div class="MyFrame">	
+				<video id="MyVideo" autoplay="" loop="" playsinline="" muted="" height="100%" poster="http://gonylab2.speedgabia.com/tov/thumbnail/main_thum.jpg">
+					<source src="http://gonylabvid02.speedgabia.com/tov/main.mp4" type="video/mp4">
+				</video>
+				
+			</div><div class="bg"></div>
+			<h2><img src="images/idx_logo.png" alt="" width="211" height="264" /></h2>
+
+		</div>
+		
+		<div class="section text">
+			<h3><img src="images/idx_ttl.png" alt="" width="211" height="262" /></h3>
+		</div>
+		
+		<div class="section slide" id="slide_01"></div>
+		
+	</section>
+
+	<!-- footer -->
+	<? include "footer.html" ?>
+	<!-- //footer -->
+</body>
+</html>

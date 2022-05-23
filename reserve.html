@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+<? include "keywords.html" ?>
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/image.css" />
+<link rel="stylesheet" type="text/css" href="css/slide.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/swp.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
+	window.addEventListener("message", function processFn(event){
+	if(event.data == 'step2'){
+		$('html, body').animate({scrollTop:$(".content").offset().top - 150},500);
+	}else{
+		var bla = event.data; 
+		$('html, body').animate({scrollTop:bla + 500},500);
+	}},false);
+
+	<? if($_GET['reserve']=='rv'){ ?>
+		$(".banner h1 strong").text("RESERVATION");	$(".banner h1 span").text("실시간예약");
+		$(".thumb").hide(); $(".tab_01").show();
+		$(".section .snb > li").removeClass("active");
+		$(".section .snb > li").eq(0).addClass("active");
+	<? }else if($_GET['reserve']=='gd'){ ?>
+		$(".banner h1 strong").text("GUIDE"); $(".banner h1 span").text("예약안내");
+		$(".thumb").hide(); $(".tab_02").show();
+		$(".section .snb > li").removeClass("active");
+		$(".section .snb > li").eq(1).addClass("active");
+	<? } ?>
+});
+</script>
+
+	
+<!-- analytics -->
+<? include "analytics.html" ?>
+<!-- //analytics -->
+
+</head>
+
+<body id="reserve" class="hd table">
+	
+	<!-- header -->
+	<? include "header.html" ?>
+	<!-- //header -->	
+	
+	<section>
+	
+		<div class="section banner" style="background:url(http://gonylab8.speedgabia.com/pinetree/banner/1.jpg) no-repeat 50% 50%;background-size:cover;">
+			<h1><strong>RESERVATION</strong><span>실시간예약</span></h1>
+		</div>
+				
+		<div class="section content">
+			
+			<ul class="snb">
+				<li class="active"><a href="#">실시간예약</a></li>
+				<li><a href="#">예약안내</a></li>
+			</ul>
+			<div class="thumb tab_01">
+				<iframe src="http://digitalnow.co.kr/reserve/calendarv2/pinetreeps" width='100%' height='2600' frameborder='0'></iframe>
+			</div>
+		
+			<div class="thumb tab_02">
+				<h2><img src="http://gonylab2.speedgabia.com/common/reserve_top_ttl.jpg" alt="" width="250" height="75" /></h2>
+				
+				<div class="r_info_01">
+					<h4><img src="http://gonylab2.speedgabia.com/common/reserve_01_ttl.gif" alt="" width="140" height="22" /></h4>
+					<table border="1" summary="RESERVATION REFUND GUIDE" id="ROOM_CODE">
+						<thead>
+							<tr>
+								<th rowspan="2">객실명</th>
+								<th colspan="2">인원</th>
+								<th colspan="3">비수기</th>
+								<th colspan="3">준성수기</th>
+								<th colspan="3">성수기</th>
+							</tr>
+							<tr>
+								<th id="normal">기준</th>
+								<th id="max">최대</th>
+								
+								<th id="weekdays">주중<br />(일~목)</th>
+								<th id="weekdays">금요일</th>
+								<th id="weekend">주말<br />(토요일)</th>
+								
+								<th id="weekdays">주중<br />(일~목)</th>
+								<th id="weekdays">금요일</th>
+								<th id="weekend">주말<br />(토요일)</th>
+								
+								<th id="weekdays">주중<br />(일~목)</th>
+								<th id="weekdays">금요일</th>
+								<th id="weekend">주말<br />(토요일)</th>
+							</tr>	
+						</thead>
+					</table>
+					<ul class="season">
+						<li>기준 인원 추가요금 - 성인 30,000원 / 아동 20,000원</li>
+					</ul>
+				</div>
+				<!-- 02. 객실 이용시 확인사항 -->
+				<div class="r_info_02">
+					<h3><img src="http://gonylab2.speedgabia.com/common/reserve_02_ttl.gif" alt="" width="166" height="22" /></h3>
+					<ul class="ENTR_COMM"></ul>
+				</div>
+				<!-- 03. 입금전 확인사항 -->
+				<div class="r_info_03">
+					<h3><img src="http://gonylab2.speedgabia.com/common/reserve_03_ttl.gif" alt="" width="137" height="22" /></h3>
+					<ul class="CNCL_COMM"></ul>
+					
+					<h3><img src="http://gonylab2.speedgabia.com/common/reserve_04_ttl.gif" alt="" width="137" height="22" /></h3>
+					<table border="1" summary="RESERVATION REFUND GUIDE" id="REFU_PRCE"></table>	
+				</div>
+		
+			</div>
+			
+		</div>
+		
+	</section>
+	
+	<!-- footer -->
+	<? include "footer.html" ?>
+	<!-- //footer -->
+</body>
+</html>

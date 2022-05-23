@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+<? include "keywords.html" ?>
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/image.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/slide.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+	
+<!-- analytics -->
+<? include "analytics.html" ?>
+<!-- //analytics -->
+
+</head>
+
+<body id="about" >
+	
+	<!-- header -->
+	<? include "header.html" ?>
+	<!-- //header -->	
+	
+	<section>
+				
+		<div class="section text">
+			<h2><div class="point"></div>SUMMARY</h2>	
+			<p>
+				확 트인 전망으로 아침에 밀양댐에서 피어오르는 물안개는 자연이 내린 우리 펜션만의 자랑이며, <br> 
+				저녁 노을 빛을 따라 지는 석양의 멋진 풍경을 감상하실 수 있습니다. <br>
+				자연을 품고 있는 그림같은 소나무&풀빌라 펜션에서 소중하고 예쁜 추억을 만들어 보세요. <br>
+			</p>
+		</div>
+		
+		<div class="section movie">
+			<iframe id="iframe" src="https://player.vimeo.com/video/437745394" width="100%" height="" frameborder="0" allowfullscreen=""></iframe>
+		</div>
+		
+		<div class="section map">
+			<h2><div class="point"></div>LOCATION</h2>	
+			<p></p>
+
+			<div id="map">
+				<!-- * 카카오맵 - 지도퍼가기 -->
+				<!-- 1. 지도 노드 -->
+				<div id="daumRoughmapContainer1653290207553" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+				<!--
+					2. 설치 스크립트
+					* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+				-->
+				<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+				<!-- 3. 실행 스크립트 -->
+				<script charset="UTF-8">
+					new daum.roughmap.Lander({
+						"timestamp" : "1653290207553",
+						"key" : "2acbd",
+						"mapWidth" : "1200",
+						"mapHeight" : "500"
+					}).render();
+				</script>
+			</div>
+		</div>
+
+		<div class="section location">
+			<div></div>
+		</div>
+	</section>
+	
+	<!-- footer -->
+	<? include "footer.html" ?>
+	<!-- //footer -->
+</body>
+</html>
