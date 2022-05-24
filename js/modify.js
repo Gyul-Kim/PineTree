@@ -24,10 +24,8 @@ var mov = [
 var img = [
 	//main
 	[13],
-	//poolvilla
-	[16,16],
-	//rooms
-	[7,7,7,7],
+	//poolvilla + rooms
+	[16,16,7,7,7,7],
 	
 ];
 

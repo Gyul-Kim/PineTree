@@ -121,7 +121,7 @@ function reserInfo(e){
 	// 04.환불규정
 	$.getJSON('http://digitalnow.co.kr/reserve/pensionInfo/' + rv_ttl + '/1',//실시간예약 환불규정 URL 
 	function(data){
-		$("table#REFU_PRCE").append("<caption class='alt'>환불규정</caption>");
+		$("table#REFU_PRCE").append("<caption class='alt'></caption>");
 		$("table#REFU_PRCE").append("<thead><tr></tr></thead><tbody><tr></tr></tbody>");
 		$.each(data.result,function(key,val){
 			$("table#REFU_PRCE thead tr").append("<th>" + val["STD_DAY"] + "일전</th>");

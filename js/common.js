@@ -121,14 +121,14 @@ switch(path) {
 
 
 		var curr = parseInt(m);
-		for(var i=1; i <= img[1][curr]; i++){
+		for(var i = 0; i <= img[1][detailPath]; i++){
 			$('#slide_01 .slide_show').append(
-				'<li style="background:url('+ url +'/room/'+ curr +'/'+ i +'.jpg) no-repeat 50% 50%;background-size:cover;"></li>'
+				'<li style="background:url('+ url +'/room/'+ (detailPath + 1) +'/'+ (i + 1) +'.jpg) no-repeat 50% 50%;background-size:cover;"></li>'
 			);
 		}
 
 		for(var i = 0; i < 3; i++) {
-			$(".infos p").text( data.result[i]["TYPE_DESC"]);
+			$(".infos p").text(data.result[detailPath]["TYPE_DESC"]);
 		}
 		
 
