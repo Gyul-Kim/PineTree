@@ -5,11 +5,11 @@ function slide_01(h,j){
 	var thumb_sel = thumb.find("." + j);
 	var i = 0;							
 	
-	thumb.css("height",dht);
-	$(window).resize(function(){
-		var dht = $(window).height(); 
-		thumb.css("height",dht);
-	});
+	// thumb.css("height",dht);
+	// $(window).resize(function(){
+	// 	var dht = $(window).height(); 
+	// 	thumb.css("height",dht);
+	// });
 	
 	thumb.append(
 		"<div id='nav'>" +
@@ -50,16 +50,16 @@ function slide_01(h,j){
 		
 	},threshold:0});
 	
-	$(window).scroll(function(e){
-		var video = document.getElementById("MyVideo");
-		var dht = $(window).height() / 10 * 8;
-		var poX = $(this).scrollTop();
-		if($("body").is(".vid") == true){
+	// $(window).scroll(function(e){
+	// 	var video = document.getElementById("MyVideo");
+	// 	var dht = $(window).height() / 10 * 8;
+	// 	var poX = $(this).scrollTop();
+	// 	if($("body").is(".vid") == true){
 			
-			if(dht < poX) video.pause(); else video.play();
+	// 		if(dht < poX) video.pause(); else video.play();
 			
-		}
-	});
+	// 	}
+	// });
 	
 	// Keyboard
 	$('body').keydown(function(e) {
@@ -122,16 +122,16 @@ function slide_02(h,j){
 		
 	},threshold:0});
 	
-	$(window).scroll(function(e){
-		var video = document.getElementById("MyVideo");
-		var dht = $(window).height() / 10 * 8;
-		var poX = $(this).scrollTop();
-		if($("body").is(".vid") == true){
+	// $(window).scroll(function(e){
+	// 	var video = document.getElementById("MyVideo");
+	// 	var dht = $(window).height() / 10 * 8;
+	// 	var poX = $(this).scrollTop();
+	// 	if($("body").is(".vid") == true){
 			
-			if(dht < poX) video.pause(); else video.play();
+	// 		if(dht < poX) video.pause(); else video.play();
 			
-		}
-	});
+	// 	}
+	// });
 	
 	// Keyboard
 	$('body').keydown(function(e) {

@@ -24,29 +24,52 @@ const detailPath = ((location.href.substr(location.href.lastIndexOf("=") + 1)).s
 
 /*---------------------------------------------------------------*/	
 //header
-$('header .lnb').css('display', 'none');
-$('header .gnb>li.gb02').on('mouseenter', function() {
-	$('header .lnb_01').stop().slideDown();
-});
-$('header .gnb>li.gb02').on('mouseleave', function() {
-	$('header .lnb_01').stop().slideUp();
-});
 
-$('header .gnb>li.gb03').on('mouseenter', function() {
-	$('header .lnb_02').stop().slideDown();
-});
-$('header .gnb>li.gb03').on('mouseleave', function() {
-	$('header .lnb_02').stop().slideUp();
-});
+if(window.innerWidth < 1024) {  
+	$('header .lnb').css('display', 'none');
 
+	$("header .gnb > li.gb > a").click(function(){
+		if($(this).is(".on") === true){
+			$("header .gnb > li.gb > a").removeClass("on");
+			$(this).next("ul").next("ul").stop().slideDown();
+		}else{
+			var gnbMenuHeit = $(this).next("ul").find("li").height();
+			var gnbMenuList = $(this).next("ul").find("li");
+			var gnbMenuTotal = gnbMenuList.length;
+	
+			$("header .gnb .lnb").stop().slideUp();
+			$(this).next("ul").stop().slideDown();
+	
+			$("header .gnb > li.gb > a").removeClass("on");
+			$(this).addClass("on");
+		}
+		return false;
+	});
+	
+} else {
+	$('header .lnb').css('display', 'none');
+	$('header .gnb>li.gb02').on('mouseenter', function() {
+		$('header .lnb_01').stop().slideDown();
+	});
+	$('header .gnb>li.gb02').on('mouseleave', function() {
+		$('header .lnb_01').stop().slideUp();
+	});
+
+	$('header .gnb>li.gb03').on('mouseenter', function() {
+		$('header .lnb_02').stop().slideDown();
+	});
+	$('header .gnb>li.gb03').on('mouseleave', function() {
+		$('header .lnb_02').stop().slideUp();
+	});
+}
 /*---------------------------------------------------------------*/	
 //banner
 
 
 /*---------------------------------------------------------------*/	
 //video
-$(".video").css("height",dht); if(dht < 675){$(".video").css("height",675); } 
-$(window).resize(function(){ var dht = $(window).height(); $(".video").css("height",dht); if(dht < 675){$(".video").css("height",675); } });
+// $(".video").css("height",dht); if(dht < 675){$(".video").css("height",675); } 
+// $(window).resize(function(){ var dht = $(window).height(); $(".video").css("height",dht); if(dht < 675){$(".video").css("height",675); } });
 
 
 /*---------------------------------------------------------------*/
@@ -56,6 +79,7 @@ switch(path) {
 	
 	// index
     case 'index' :
+	videoControl(video);
 	$("#slide_01").append('<ul class="slide_show"></ul>');
 
 	for(var i=0; i < img[0]; i++){
@@ -76,6 +100,12 @@ switch(path) {
 		if(thisTop > a) {
 			$("#index .text h3").css({"transform":"translateY(0)", "opacity":"1"});
 		} else {}  
+	});
+
+	$("#index .slide").css("height",$("#index .slide").width() / 16 * 9);
+	
+	$(window).on("resize", function() {
+		$("#index .slide").css("height",$("#index .slide").width() / 16 * 9);	
 	});
 
 	break;
@@ -104,6 +134,7 @@ switch(path) {
 /*---------------------------------------------------------------*/	
 	//room	
 	case 'room' :
+	$("body").addClass("rooms_" + numbering(detailPath));
 	$.getJSON('http://digitalnow.co.kr/reserve/pensionInfo/'+ rv_ttl +'/8', function(data){	
 
 		// var currRoomNum = parseInt(m) + 1;
@@ -164,7 +195,7 @@ switch(path) {
 		var fwh = parseInt(dwh / 10 * 8.5); 
 		var rwh = fwh / 16 * 9;
 		$(".infos .img").css({"height":$(".infos .img").width()});	
-		if(dwh < 1001) $(".movie #iframe").css({"width":"950px","height":"534px"});
+		if(dwh < 1001) $(".movie #iframe").css({"width":"90vw","height":"350px"});
 		else $(".movie #iframe").css({"width":fwh,"height":rwh});	
 		
 		$(".infos .txt").append(
@@ -187,9 +218,15 @@ switch(path) {
 			var fwh = parseInt(dwh / 10 * 8.5); 
 			var rwh = fwh / 16 * 9;
 			$(".infos .img").css({"height":$(".infos .img").width()});	
-			if(dwh < 1001) $(".movie #iframe").css({"width":"950px","height":"534px"});
+			if(dwh < 1001) $(".movie #iframe").css({"width":"90vw","height":"350px"});
 			else $(".movie #iframe").css({"width":fwh,"height":rwh});
 		});	
+
+		$("#room .slide").css("height",$("#room .slide").width() / 16 * 9);
+	
+		$(window).on("resize", function() {
+			$("#room .slide").css("height",$("#room .slide").width() / 16 * 9);	
+		});
 
 		
 	
@@ -270,4 +307,24 @@ function numbering(n) { // 이미지 넘버링 10 보다 작을때
 
 function char_size(t){//t = 텍스트가 75자 이상 노출 될 때
 	t.each(function(e){ if(t.text().length >= 75) $(this).text($(this).text().substr(0,60) + '...'); }); 
+}
+
+//function - video
+function videoControl(control){
+	videoScale(control);
+	$(window).on("resize",function(){ 
+		videoScale(control); 
+	});
+	$(window).on("scroll",function(){
+		var thisTop = $(this).scrollTop();
+		var stopTop = $("section > div:first-child").height() - 100;
+		var player = new Vimeo.Player(control);
+		if(thisTop > stopTop) player.pause();
+		else player.play();
+	});
+}
+//function - videocontrol
+function videoScale(control){
+	control.style.width = Math.round($(window).height() / 9 * 16) + "px";
+	control.style.height = Math.round($(window).width() / 16 * 9) + "px";
 }

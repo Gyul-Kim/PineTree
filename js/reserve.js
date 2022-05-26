@@ -3,7 +3,7 @@ function reserInfo(e){
 	$.getJSON('http://digitalnow.co.kr/reserve/pensionInfo/' + rv_ttl + '/5',//실시간예약 객실가격 URL 
 	function(data){
 		var  i = 0;	
-		$("table#ROOM_CODE").append("<caption class='alt'>객실정보 및 요금 안내</caption>");
+		$("table#ROOM_CODE").append("<caption class='alt'></caption>");
 		$("table#ROOM_CODE").append("<tbody></tbody>");
 		if(type == "Y"){
 			$.each(data.result,function(key,val){

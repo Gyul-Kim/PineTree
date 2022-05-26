@@ -6,13 +6,16 @@ section 							{width:100%;height:100%;}
 section,.section					{position:relative;width:100%;height:100%;overflow:hidden;}
 
 /* MyFrame */
+.video {position: relative; width:100%; height:100vh;}
 .MyFrame 						{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;overflow:hidden;}
 .MyFrame #MyVideo		 			{position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);}
 .MyFrame #MyVideo		 			{min-height:100%;width:100%;height:100%;object-fit:cover;}
+.MyFrame #MyVideo {position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);background-repeat:no-repeat;background-position:50% 50%;}
+.MyFrame #MyVideo {min-width:100%;min-height:100%;width:auto;height:auto;object-fit:cover;background-size:cover;display:block;}
 
 
 /* Slide */
-.slide 							{position:relative;width:100%;height:100%;overflow:hidden;height:562px;}
+.slide 							{position:relative;width:100%;height:100vh;overflow:hidden;height:562px;}
 .slide_show 						{position:relative;width:100%;height:100%;overflow:hidden;}
 .slide_show > li 					{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
 .slide_show > li.active 			{z-index:100!important;}
@@ -30,6 +33,13 @@ section,.section					{position:relative;width:100%;height:100%;overflow:hidden;}
 .slide #nav > ul li a.active 		{background:url(../images/on.png) no-repeat 0 0;}
 .slide #nav > ul li a span.alt {display:none;} 
 
+/* image */
+.rooms_01 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/room/1/1.jpg) 50% 50% / cover no-repeat;}
+.rooms_02 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/room/2/1.jpg) 50% 50% / cover no-repeat;}
+.rooms_03 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/room/3/1.jpg) 50% 50% / cover no-repeat;}
+.rooms_04 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/room/4/1.jpg) 50% 50% / cover no-repeat;}
+.rooms_05 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/room/5/1.jpg) 50% 50% / cover no-repeat;}
+.rooms_06 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/room/6/1.jpg) 50% 50% / cover no-repeat;}
 
 /* Header */
 header 							{position:fixed;top:0;left:0;width:100%;z-index:1000;}
@@ -63,6 +73,7 @@ header a,footer a 				{display:block;}
 
 /*------------------------------------------------------------------------------------------------*/
 /* Index */
+#index .MyFrame {background:url(http://gonylab8.speedgabia.com/pinetree/temp/thumb/main.jpg) no-repeat 50% 50%; background-size:cover;}
 #index .video h2 {position:absolute;top:50%;left:50%;width:211px;height:264px;margin:-132px 0 0 -106px;z-index:100; opacity:0; transform:translateY(10%); transition:1.25s;}
 #index .video .bg	{position:absolute;top:10px;left:10px;width:calc(100% - 22px);height:calc(100% - 22px);border:1px dotted #fff;z-index:101;}
 
@@ -169,6 +180,7 @@ header a,footer a 				{display:block;}
 
 /*------------------------------------------------------------------------------------------------*/
 /* Reserve */
+#reserve .banner {background:url(http://gonylab8.speedgabia.com/pinetree/banner/1.jpg) no-repeat 50% 50%; background-size:cover;}
 #reserve .text {padding-top:230px;}
 #reserve .text h2 {text-align:center;letter-spacing:1px;padding-bottom:50px;}
 #reserve .text h2 .point {background:url(../images/point.jpg) no-repeat left top;width:87px;height:7px;margin:35px auto 50px;}
@@ -206,20 +218,72 @@ header a,footer a 				{display:block;}
 
 
 @media(max-width:1024px) { 
-	header h1 {top:30px; left:50%; transform:translateX(-50%);}
-	header h1 a {background-size:cover; width:78px; height:94px;}
-	header .gnb {width:100%; top:150px; right:50%; transform:translateX(50%);}
+	header {height:180px;  background-color:#fff;}
+	header h1 {top:20px; left:50%; transform:translateX(-50%);}
+	header h1 a {background-size:cover; width:78px; height:94px;  background:url(../images/logo_m.png) no-repeat 50% 50%; background-size:cover;}
+	header .gnb {top:128px; border-top:1px solid #444; border-bottom:1px solid #e8e8e8;}
+	header .gnb > li {padding:18px 15px;}
+	header .gnb > li > a span {font-weight:bold; text-shadow:none; color:#000;}
+	header .gnb > li > a {font-size:15px;}
+	header .gnb {width:100%; right:50%; transform:translateX(50%);}
+
+	.slide {height:30vh;}
+	.slide #nav > a.prev img, .slide #nav > a.next img {width:100px; height:28px;}
+	.slide #nav > a.prev, .slide #nav > a.next {width:100px; height:28px;}
+	
+	.video {height:50vh;}
+	section {padding-top:190px;}
+	
+	#index .text h3 {width:130px;}
+	#index .text h3 img {width:130px; height:auto;}
+	#index .video h2 {width:130px; margin:-82px 0 0 -65px;}
+	#index .video h2 img {width:130px; height:auto;}
+
 
 	.table .banner h1 {top:60%;}
 	.table .banner h1 strong {font-size:30px;}
 	.table .banner h1 span {font-size:17.5px;}
 	.table .content .snb {width:250px;}
 	.table .content .snb > li a {font-size:15px;}
+
+	footer .InBox div {text-align: center;}
+	footer .InBox div p {font-size:16px;}
+	footer .InBox div ul li {font-size:16px;}
+	footer .InBox h5 {float:none; width:80px; margin:25px auto;}
+	footer .InBox h5 a img {width:80px; height:auto;}
+	footer .InBox div {text-align: center; }
+
+	#about .text {padding-top:0;}
+	#about .text p {padding:0 40px; font-size:13.4px; line-height:1.75;}
+	#about .map {padding:85px 0 30px;}
+	#about .map #map {height:480px;}
+	#about .location {padding:80px 0 0;}
+	#about .location div {height:300px;}
+
+	#room .infos h1 {font-size:23px;}
+	#room .infos p {font-size:13.3px;}
+	#room .infos .txt {text-align: center;}
+	#room .infos .txt dl {float:none; margin:15px 0; width:100%; font-size:14px;}
+	#room .infos .txt dl dt {background:none; padding-left:0; width:100%; float:none;}
+	#room .infos .txt dl dd {width:100%;}
+	#room .infos .img {width:50%;}
+
+	#reserve section {padding-top:0;}
+	#reserve .tab_02 table tr th, #reserve .tab_02 table tr td {font-size:10px;}
+
+
 }
 
 
 @media(max-width:768px) {
-
+	#about .location div {background:url(http://gonylab8.speedgabia.com/pinetree/m/about/map.jpg) no-repeat 50% 50%;}
+	#reserve .banner {background:url(http://gonylab8.speedgabia.com/pinetree/m/banner/1.jpg) no-repeat 50% 50%;}
+	.rooms_01 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/m/room/1/1.jpg) 50% 50% / cover no-repeat;}
+	.rooms_02 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/m/room/2/1.jpg) 50% 50% / cover no-repeat;}
+	.rooms_03 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/m/room/3/1.jpg) 50% 50% / cover no-repeat;}
+	.rooms_04 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/m/room/4/1.jpg) 50% 50% / cover no-repeat;}
+	.rooms_05 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/m/room/5/1.jpg) 50% 50% / cover no-repeat;}
+	.rooms_06 .img .radius {background:url(http://gonylab8.speedgabia.com/pinetree/m/room/6/1.jpg) 50% 50% / cover no-repeat;}
 }
 
 @media(max-width:680px) { 

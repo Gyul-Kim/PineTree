@@ -2,6 +2,10 @@
 $(document).bind("contextmenu",function(e){return false;});
 $(document).bind("ondragstart",function(e){return false;});
 $(document).bind("onselectstart",function(e){return false;}); 
+const isMobile = () => { 
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+  };
+  
 
 /* ------------------------------------------------------------------------------- */
 /* 실시간예약 - 계정정보 */
@@ -12,7 +16,8 @@ var type = "N";
 
 /* 이미지,영상 - 경로 */
 var vid = "http://gonylabvid02.speedgabia.com/tov";
-var url = "http://gonylab8.speedgabia.com/pinetree";
+const url =  isMobile() && window.innerWidth <=768 ? 'http://gonylab8.speedgabia.com/pinetree/m/' : 'http://gonylab8.speedgabia.com/pinetree/';
+
 
 /* 영상 */
 var mov = [
