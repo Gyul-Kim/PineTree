@@ -61,7 +61,18 @@ if(window.innerWidth < 1024) {
 	$('header .gnb>li.gb03').on('mouseleave', function() {
 		$('header .lnb_02').stop().slideUp();
 	});
+
+	$(window).on("scroll",function(){
+		var thisTop = $(this).scrollTop();
+		if($(this).scrollTop() > 0){
+			$(".hd_bg").css("transform","translateY(0)");      
+		} else {
+			$(".hd_bg").css("transform","translateY(-150px)");
+		}
+	});
 }
+
+
 /*---------------------------------------------------------------*/	
 //banner
 
@@ -81,6 +92,7 @@ switch(path) {
     case 'index' :
 	videoControl(video);
 	$("#slide_01").append('<ul class="slide_show"></ul>');
+  
 
 	for(var i=0; i < img[0]; i++){
 		$('#slide_01 .slide_show').append(
@@ -145,6 +157,12 @@ switch(path) {
 		// $('#text_0' + currRoomNum).css('display', 'block');
 		// $('#slide_0' + currRoomNum).css('display', 'block');
 
+		if(detailPath == 0 || detailPath == 1) {
+			$("#room .movie #iframe").attr("src",vid[0][0]);
+		} else {
+			$("#room .movie #iframe").attr("src",vid[1][0]);
+		}
+
 		$("#slide_01").append('<ul class="slide_show"></ul>'); 
 		$("#slide_02").append('<ul class="slide_show"></ul>');
 		$("#slide_03").append('<ul class="slide_show"></ul>'); 
@@ -198,13 +216,16 @@ switch(path) {
 		if(dwh < 1001) $(".movie #iframe").css({"width":"90vw","height":"350px"});
 		else $(".movie #iframe").css({"width":fwh,"height":rwh});	
 		
+		let u = v -1 
+
 		$(".infos .txt").append(
-			'<dl><dt>객실구조 :</dt><dd>'+ data.result[0]["ROOM_TYPE"] +'</dd></dl>' +
-			'<dl><dt>비품안내 :</dt><dd>'+ data.result[0]["INTERIOR"] +'</dd></dl>' +
-			'<dl><dt>객실크기 :</dt><dd>'+ data.result[0]["ROOM_EXTN"] +'평형</dd></dl>' +
-			'<dl><dt>입실인원 :</dt><dd>기준 '+ data.result[0]["ADLT_BASE_PERS"] +'명 ~ 최대 '+ data.result[0]["ADLT_MAX_PERS"] +'명(2명 초과시 추가요금 발생)</dd></dl>' +
-			'<dl><dt>특이사항 :</dt><dd>'+ data.result[0]["ETC_DETL"] +'</dd></dl>' 
+			'<dl><dt>객실구조 :</dt><dd>'+ data.result[u]["ROOM_TYPE"] +'</dd></dl>' +
+			'<dl><dt>비품안내 :</dt><dd>'+ data.result[u]["INTERIOR"] +'</dd></dl>' +
+			'<dl><dt>객실크기 :</dt><dd>'+ data.result[u]["ROOM_EXTN"] +'평형</dd></dl>' +
+			'<dl><dt>입실인원 :</dt><dd>기준 '+ data.result[u]["ADLT_BASE_PERS"] +'명 ~ 최대 '+ data.result[u]["ADLT_MAX_PERS"] +'명(풀빌라 A, B동은 성인/어린이 공통 4만원 추가)</dd></dl>' +
+			'<dl><dt>특이사항 :</dt><dd>'+ data.result[u]["ETC_DETL"] +'</dd></dl>' 
 		);
+
 		
 		$(window).on("scroll",function(){ 
 			var top = $(this).scrollTop(); 

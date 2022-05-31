@@ -15,7 +15,10 @@ var rv_ttl = "pinetreeps";
 var type = "N";
 
 /* 이미지,영상 - 경로 */
-var vid = "http://gonylabvid02.speedgabia.com/tov";
+var vid = [
+	["https://player.vimeo.com/video/714288357"],
+	["https://player.vimeo.com/video/714288380"],
+];
 const url =  isMobile() && window.innerWidth <=768 ? 'http://gonylab8.speedgabia.com/pinetree/m/' : 'http://gonylab8.speedgabia.com/pinetree/';
 
 
@@ -28,9 +31,12 @@ var mov = [
 /* 이미지 */
 var img = [
 	//main
-	[13],
+	[14],
 	//poolvilla + rooms
-	[16,16,7,7,7,7],
+	// [16,16,
+  //   7,7,7,7],
+	[15,15,
+    6,6,6,6],
 	
 ];
 

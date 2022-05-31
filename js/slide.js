@@ -13,8 +13,8 @@ function slide_01(h,j){
 	
 	thumb.append(
 		"<div id='nav'>" +
-			"<a class='prev' href='#'><img src='images/prev_01.png' alt='이전' width='120' height='36' /></a>" +
-			"<a class='next' href='#'><img src='images/next_01.png' alt='다음' width='120' height='36' /></a>" +
+			"<a class='prev' ><img src='images/prev_01.png' alt='이전' width='120' height='36' /></a>" +
+			"<a class='next' ><img src='images/next_01.png' alt='다음' width='120' height='36' /></a>" +
 			"<ul></ul>" + 
 		"</div>"
 	);
@@ -85,8 +85,8 @@ function slide_02(h,j){
 	
 	thumb.append(
 		"<div id='nav'>" +
-			"<a class='prev' href='#'><img src='images/prev_01.png' alt='이전' width='120' height='36' /></a>" +
-			"<a class='next' href='#'><img src='images/next_01.png' alt='다음' width='120' height='36' /></a>" +
+			"<a class='prev'><img src='images/prev_01.png' alt='이전' width='120' height='36' /></a>" +
+			"<a class='next'><img src='images/next_01.png' alt='다음' width='120' height='36' /></a>" +
 			"<ul></ul>" + 
 		"</div>"
 	);
@@ -158,15 +158,15 @@ function slide_02(h,j){
 	//Mov
 	function VidMove(){
 		var video = document.getElementById("MyVideo");
-		if($("body").is(".vid") == true){
-			var dht = $(window).height() / 10 * 6; var poX = $(this).scrollTop();
+		// if($("body").is(".vid") == true){
+		// 	var dht = $(window).height() / 10 * 6; var poX = $(this).scrollTop();
 		
-			if(dht < poX) video.pause(); else video.play();
+		// 	if(dht < poX) video.pause(); else video.play();
 			
-			if(i == 0){ if(dht < poX) video.pause(); else video.play(); } 
-			else{ video.pause(); }
+		// 	if(i == 0){ if(dht < poX) video.pause(); else video.play(); } 
+		// 	else{ video.pause(); }
 			
-		}
+		// }
 	}
 
 	//prev

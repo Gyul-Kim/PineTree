@@ -43,21 +43,22 @@ section,.section					{position:relative;width:100%;height:100%;overflow:hidden;}
 
 /* Header */
 header 							{position:fixed;top:0;left:0;width:100%;z-index:1000;}
-header h1 						{position:absolute;top:30px;left:30px;z-index:10;}
+header h1 						{position:absolute;top:22px;left:30px;z-index:10;}
 header h1 a						{background:url(../images/logo_b.png) no-repeat left top;width:120px;height:160px;}
-header .gnb 						{ position:absolute; top:50px; right:50px;z-index:10; display:flex;}
+header .gnb 						{ position:absolute; top:70px; right:50px;z-index:10; display:flex;}
 header .gnb > li  					{float:left; position: relative;  padding:0 15px; flex:1;}
 header .gnb > li > a					{display:block; font-size:17px; text-align:center;}
 header .gnb > li > a span				{color: #fff; text-shadow:2px 2px 2px rgb(0 0 0 / 15%);}
 
 header h1 a					{background:url(../images/logo.png) no-repeat left top;}
-header .lnb { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); width: 130px; z-index: 100; }
+header .lnb { position: absolute; top:40px; left: 50%; transform: translateX(-50%); width: 130px; z-index: 100; }
 header .lnb_01 {height:120px;}
 header .lnb_02 {height:195px;}
 header .lnb > li { background-color: rgba(238, 238, 238, 0.5); margin: 3px 0; }
 header .lnb > li > a { padding: 15px 0; text-align: center; }
 header .lnb > li > a > span { font-size: 15px; color: #222; }
 header .lnb > li:hover a span { color: #000; }
+.hd_bg {position: fixed; top:0; left:0; width:100%; position: relative; width:100%; background-color:#fff; height:150px; transform:translateY(-150px); opacity:0.34; transition:1.24s;}
 
 /* Footer */
 footer 							{position:relative;width:100%;background:#3f3f3f;padding:3% 0;overflow:hidden;z-index:3300;}
@@ -70,17 +71,14 @@ footer .InBox div ul li 			{color:#b0b0b0;font-size:16px;}
 header a,footer a 				{display:block;} 
 
 
-
 /*------------------------------------------------------------------------------------------------*/
 /* Index */
-#index .MyFrame {background:url(http://gonylab8.speedgabia.com/pinetree/temp/thumb/main.jpg) no-repeat 50% 50%; background-size:cover;}
+#index .MyFrame {background:url(http://gonylab8.speedgabia.com/pinetree/thumb/main.jpg) no-repeat 50% 50%; background-size:cover;}
 #index .video h2 {position:absolute;top:50%;left:50%;width:211px;height:264px;margin:-132px 0 0 -106px;z-index:100; opacity:0; transform:translateY(10%); transition:1.25s;}
 #index .video .bg	{position:absolute;top:10px;left:10px;width:calc(100% - 22px);height:calc(100% - 22px);border:1px dotted #fff;z-index:101;}
 
 #index .text {padding:6.5% 0;}
 #index .text h3 {width:211px;margin:0 auto; opacity:0; transform:translateY(10%); transition:1.25s;}
-
-
 /*------------------------------------------------------------------------------------------------*/
 /* About */
 #about .text {padding-top:230px;}
@@ -95,8 +93,8 @@ header a,footer a 				{display:block;}
 #about .map p {font-size:16px;line-height:1.5;text-align:center; margin-bottom:65px;}
 #about .map #map {position: relative; margin:0 auto; width:100%; max-width:1200px; height:550px}
 #about .location {padding:120px 0 0;}
-#about .location div {background:url(http://gonylab8.speedgabia.com/pinetree/about/map.jpg) no-repeat 50% 50%; background-size:cover;}
-#about .location div {position: relative; width:100%; max-width:1300px; height:700px; margin:0 auto 20px; overflow: hidden; z-index:1;}
+#about .location div {background:url(http://gonylab8.speedgabia.com/pinetree/about/map.jpg) no-repeat 50% 50%; background-size:cover; width: 100%; height: 64vw; }
+/* #about .location div {position: relative; width:100%; max-width:1300px; height:700px; margin:0 auto 20px; overflow: hidden; z-index:1;} */
 
 
 
@@ -218,14 +216,16 @@ header a,footer a 				{display:block;}
 
 
 @media(max-width:1024px) { 
-	header {height:180px;  background-color:#fff;}
+	header {height:190px;  background-color:#fff;}
 	header h1 {top:20px; left:50%; transform:translateX(-50%);}
 	header h1 a {background-size:cover; width:78px; height:94px;  background:url(../images/logo_m.png) no-repeat 50% 50%; background-size:cover;}
 	header .gnb {top:128px; border-top:1px solid #444; border-bottom:1px solid #e8e8e8;}
-	header .gnb > li {padding:18px 15px;}
+	header .gnb > li {padding:23px 15px;}
 	header .gnb > li > a span {font-weight:bold; text-shadow:none; color:#000;}
 	header .gnb > li > a {font-size:15px;}
 	header .gnb {width:100%; right:50%; transform:translateX(50%);}
+	header .lnb {top:66px;}
+	.hd_bg {display:none;}
 
 	.slide {height:30vh;}
 	.slide #nav > a.prev img, .slide #nav > a.next img {width:100px; height:28px;}
